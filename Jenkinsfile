@@ -63,11 +63,29 @@ pipeline {
 
     post {
         success {
-            echo 'CI/CD pipeline completed successfully!'
-        }
+        echo 'CI/CD pipeline completed successfully!'
+        emailext (
+            subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+            body: """<p>Good news! The build succeeded.</p>
+                     <p>Job: <b>${env.JOB_NAME}</b></p>
+                     <p>Build Number: <b>${env.BUILD_NUMBER}</b></p>
+                     <p>Check console output at: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
+            to: "santoshjavasrit@gmail.com",
+            mimeType: 'text/html'
+        )
+    }
 
         failure {
-            echo 'CI/CD pipeline failed!'
-        }
+        echo 'CI/CD pipeline failed!'
+        emailext (
+            subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+            body: """<p>The build failed. Please check.</p>
+                     <p>Job: <b>${env.JOB_NAME}</b></p>
+                     <p>Build Number: <b>${env.BUILD_NUMBER}</b></p>
+                     <p>Check console output at: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
+            to: "santoshjavasrit@gmail.com",
+            mimeType: 'text/html'
+        )
+    }
     }
 }
