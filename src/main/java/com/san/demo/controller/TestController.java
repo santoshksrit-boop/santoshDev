@@ -14,7 +14,7 @@ import java.util.Map;
 public class TestController {
 
     @GetMapping("/ping")
-    public Map<String, Object> ping() {
+    public Map<String, Object> ping() 
         return Map.of(
                 "status", "Om Namah Shivaya  Radhe Radhe ji ho santosh",
                 "timestamp", Instant.now().toString()
