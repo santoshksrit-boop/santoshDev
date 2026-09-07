@@ -70,7 +70,7 @@ pipeline {
                      <p>Job: <b>${env.JOB_NAME}</b></p>
                      <p>Build Number: <b>${env.BUILD_NUMBER}</b></p>
                      <p>Check console output at: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
-            to: "santoshjavasrit@gmail.com ,santosh.k@sritindia.com",
+            to: "santoshjavasrit@gmail.com ,santosh.k@sritindia.com ,santhanan.s@sritindia.com",
             mimeType: 'text/html'
         )
     }
@@ -83,7 +83,7 @@ pipeline {
                      <p>Job: <b>${env.JOB_NAME}</b></p>
                      <p>Build Number: <b>${env.BUILD_NUMBER}</b></p>
                      <p>Check console output at: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
-            to: "santoshjavasrit@gmail.com , santosh.k@sritindia.com",
+            to: "santoshjavasrit@gmail.com , santosh.k@sritindia.com ,santhanan.s@sritindia.com",
             mimeType: 'text/html'
         )
     }
